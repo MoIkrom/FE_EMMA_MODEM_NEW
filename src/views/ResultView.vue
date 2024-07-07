@@ -311,7 +311,7 @@ export default {
       const url = import.meta.env.VITE_API_URL_LOCAL
       try {
         await axios.get(`${url}/target/get-status`)
-        this.getAllData()
+        await this.getAllData()
         // this.ExcelResult = response.data.data.data
         this.loading = false
       } catch (error) {
@@ -405,7 +405,7 @@ export default {
       Swal.fire({
         title: 'Tunggu sebentar...',
         html: '<div class="spinner-border" role="status"></div> Sedang mengambil pesan dari modem...',
-        timer: 10000,
+        timer: 8000,
         timerProgressBar: true,
         didOpen: () => {
           Swal.showLoading()
